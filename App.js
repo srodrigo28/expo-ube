@@ -1,11 +1,11 @@
 import React from 'react';
-import Contador3 from './src/apps/Contador3';
+import Ube from './src/apps/Ube';
 
 export default function App( ) {
   
   return (
     <>
-      <Contador3 inicial={10} passo={10} />
+      <Ube viagem={10} />
     </>
   );
 }

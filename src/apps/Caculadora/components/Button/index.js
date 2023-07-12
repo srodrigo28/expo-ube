@@ -13,13 +13,28 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         borderWidth: 1,
         borderColor: '#888'
-    }
+    },
+    operationButton: {
+        color: '#fff',
+        backgroundColor: '#fa8231'
+    },
+    buttonDouble: {
+        width: (Dimensions.get('window').width / 4) * 2,
+    },
+    buttonTriple: {
+        width: (Dimensions.get('window').width / 4) * 3,
+    },
+
 })
 
 export default props => {
+    const styleButton = [styles.button]
+    if (props.double) styleButton.push(styles.buttonDouble)
+    if (props.triple)  styleButton.push(styles.buttonTriple)
+    if (props.operationButton)  styleButton.push(styles.operationButton)
     return (
         <TouchableOpacity onPress={props.onClick}>
-            <Text style={styles.button}>{props.label}</Text>
+            <Text style={styleButton}>{props.label}</Text>
         </TouchableOpacity>
     )
 }
